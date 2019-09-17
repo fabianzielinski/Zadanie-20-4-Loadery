@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
+    "start-dev": "webpack-dev-server",
+    "build": "webpack --production",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore"
   },
   "author": "fabz",
@@ -17,14 +19,18 @@
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^3.2.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8"
+    "css-loader": "^2.1.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "node": "^12.2.0",
+    "webpack": "^4.31.0"
   }
 }
