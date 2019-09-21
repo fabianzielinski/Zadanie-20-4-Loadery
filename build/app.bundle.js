@@ -30169,6 +30169,78 @@ module.exports = v4;
 
 /***/ }),
 
+/***/ "./src/components/Title.js":
+/*!*********************************!*\
+  !*** ./src/components/Title.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Title = function Title(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "".concat(props.name, " ").concat(props.todoListCount));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Title);
+
+/***/ }),
+
+/***/ "./src/components/Todo.js":
+/*!********************************!*\
+  !*** ./src/components/Todo.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Todo = function Todo(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "".concat(props.id, " ").concat(props.text));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Todo);
+
+/***/ }),
+
+/***/ "./src/components/TodoList.js":
+/*!************************************!*\
+  !*** ./src/components/TodoList.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Todo */ "./src/components/Todo.js");
+
+
+
+var TodoList = function TodoList(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.data.map(function (todo) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Todo__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: todo.id,
+      text: todo.text,
+      id: todo.id,
+      removeTodo: props.removeTodo
+    });
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TodoList);
+
+/***/ }),
+
 /***/ "./src/containers/App.css":
 /*!********************************!*\
   !*** ./src/containers/App.css ***!
@@ -30214,6 +30286,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.css */ "./src/containers/App.css");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Title */ "./src/components/Title.js");
+/* harmony import */ var _components_TodoList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/TodoList */ "./src/components/TodoList.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
@@ -30244,6 +30318,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -30256,7 +30332,13 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
     _this.state = {
-      data: []
+      data: [{
+        id: uuid__WEBPACK_IMPORTED_MODULE_1___default.a.v4(),
+        text: "as"
+      }, {
+        id: uuid__WEBPACK_IMPORTED_MODULE_1___default.a.v4(),
+        text: "bas"
+      }]
     };
     return _this;
   }
@@ -30286,9 +30368,14 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name: "Tytu\u0142 --> Ilo\u015B\u0107 list: ",
+        todoListCount: this.state.data.length
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _App_css__WEBPACK_IMPORTED_MODULE_2___default.a.TodoApp
-      }, "Tutaj pojawi\u0105 si\u0119 komponenty naszej aplikacji.");
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TodoList__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        data: this.state.data
+      })));
     }
   }]);
 
