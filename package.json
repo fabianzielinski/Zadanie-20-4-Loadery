@@ -1,23 +1,33 @@
 {
-  "name": "zadanie-20-4-loadery",
-  "version": "1.0.0",
-  "description": "Webpack Loadery",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "fabz",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8"
-  }
+      "name": "zadanie-20-4-loadery",
+      "version": "1.0.0",
+      "description": "Webpack Loadery",
+      "main": "index.js",
+      "scripts": {
+            "start": "webpack",
+            "dev": "webpack --mode development --watch",
+            "build": "webpack --mode production"
+      },
+      "author": "fabz",
+      "license": "ISC",
+      "devDependencies": {
+            "@babel/core": "^7.6.0",
+            "@babel/preset-env": "^7.6.0",
+            "@babel/preset-react": "^7.0.0",
+            "babel-loader": "^8.0.6",
+            "babel-preset-env": "^1.7.0",
+            "babel-preset-react": "^6.24.1",
+            "css-loader": "^2.1.1",
+            "node-sass": "^4.11.0",
+            "react": "^16.9.0",
+            "react-dom": "^16.9.0",
+            "style-loader": "^0.23.1",
+            "webpack": "^4.31.0",
+            "webpack-cli": "^3.3.2",
+            "webpack-dev-server": "^3.4.1"
+      },
+      "dependencies": {
+            "node": "^12.2.0",
+            "webpack": "^4.31.0"
+      }
 }
